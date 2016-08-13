@@ -1,0 +1,13 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/op/go-logging",
+			"repository": "https://github.com/op/go-logging",
+			"vcs": "git",
+			"revision": "970db520ece77730c7e4724c61121037378659d9",
+			"branch": "master",
+			"notests": true
+		}
+	]
+}

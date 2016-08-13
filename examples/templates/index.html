@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type=text/css href="/static/sample_app.css">
+  </head>
+  <body>
+  <header>
+    <div>
+      <ul>
+      <li><a href="//docs.getclef.com/v1.0/docs/getting-started" target="_blank" title="Clef API Docs">Clef API Docs</a></li>
+      <li><a href="//getclef.com/" target="_blank" title="Clef Developer Portal">Clef Developer Portal</a></li>
+      {{ if .Info }}
+      <a href="/logout">Logout</a>
+      {{ end }}
+      </ul>
+    </div>
+  </header>
+
+  <div class="main">
+
+      {{ if  .Info  }}
+      <div class="form-group">
+          <button class="btn btn-lg">Hello {{.Info.FirstName}} {{.Info.LastName}}. You are logged in.</button>
+      </div>
+    {{ else if .Error }}
+      <div class="form-group">
+          <button class="btn btn-lg">Whoops, looks like something went wrong ( {{ .Error }} ).</button>
+      </div>
+      <br>
+      <a href="/">Try again</a>
+    {{ else }}
+    <div class="row">
+        <div class="form-group">
+          <input type="submit" class="btn btn-lg clef-button" data-app-id="4f318ac177a9391c2e0d221203725ffd" data-style="flat" data-redirect-url="http://localhost:5000/oauth_callback" data-custom="true" value="Log in with your phone" />
+        </div>
+    </div>
+    {{ end }}
+
+
+  </div>    
+  <script type='text/javascript' src='https://clef.io/v3/clef.js'></script>
+  </body>
+</html>
